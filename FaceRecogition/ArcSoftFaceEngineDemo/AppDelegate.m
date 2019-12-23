@@ -4,6 +4,7 @@
 
 #import "AppDelegate.h"
 #import <ArcSoftFaceEngine/ArcSoftFaceEngine.h>
+#import "VideoCheckController.h"
 
 @interface AppDelegate ()
 @end
@@ -24,11 +25,20 @@
     MRESULT mr = [engine activeWithAppId:appid SDKKey:sdkkey];
     if (mr == ASF_MOK) {
         NSLog(@"*** SDK激活成功 ***");
+        [self initRootController];
     } else if(mr == MERR_ASF_ALREADY_ACTIVATED){
         NSLog(@"*** SDK已激活 ***");
+        [self initRootController];
     } else {
         NSLog(@"*** SDK激活失败：%ld ***", mr);
     }
+}
+
+- (void)initRootController {
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = [[VideoCheckController alloc] init];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
 }
 
 - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {

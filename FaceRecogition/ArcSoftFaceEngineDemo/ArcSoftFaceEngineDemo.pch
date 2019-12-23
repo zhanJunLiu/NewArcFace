@@ -1,0 +1,22 @@
+//
+//  ArcSoftFaceEngineDemo.pch
+//  ArcSoftFaceEngineDemo
+//
+//  Created by zhanjun liu on 2019/12/23.
+//  Copyright © 2019 ArcSoft. All rights reserved.
+//
+
+#ifndef ArcSoftFaceEngineDemo_pch
+#define ArcSoftFaceEngineDemo_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+#define rw kScreenWidth / 375
+#define rh kScreenHeight / 667
+#define kSafeAreaTopHeight ((kDevice5_8 || kDevice6_1 || kDevice6_5)? 20 : 0)
+#define kSafeAreaBottomHeight ((kDevice5_8 || kDevice6_1 || kDevice6_5) ? 34 : 0)
+
+#endif /* ArcSoftFaceEngineDemo_pch */

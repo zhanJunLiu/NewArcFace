@@ -12,6 +12,8 @@
 #import "Utility.h"
 #import "ASFVideoProcessor.h"
 #import <ArcSoftFaceEngine/ArcSoftFaceEngine.h>
+#import "Masonry.h"
+#import "FaceInfoView.h"
 
 #define IMAGE_WIDTH     720
 #define IMAGE_HEIGHT    1280
@@ -27,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelName;
 @property (weak, nonatomic) IBOutlet UIButton *buttonRegister;
 
+@property (nonatomic, strong) FaceInfoView* faceInfoVeiw;
 @end
 
 @implementation VideoCheckController
@@ -46,6 +49,18 @@
     self.cameraController = [[ASFCameraController alloc]init];
     self.cameraController.delegate = self;
     [self.cameraController setupCaptureSession:videoOrientation];
+    
+    self.faceInfoVeiw = [[FaceInfoView alloc] init];
+    self.faceInfoVeiw.backgroundColor = UIColor.clearColor;
+    [self.view addSubview:self.faceInfoVeiw];
+    [self.view bringSubviewToFront:self.faceInfoVeiw];
+    [self.faceInfoVeiw mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+    
+    CGAffineTransform transform = CGAffineTransformIdentity;
+    transform = CGAffineTransformRotate(transform, -M_PI_2);
+    self.faceInfoVeiw.transform = transform;
 }
 
 - (void)didReceiveMemoryWarning {

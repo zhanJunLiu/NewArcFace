@@ -25,6 +25,7 @@
 		18DF28A723AFB2EF009DB249 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DF289C23AFB2EF009DB249 /* MASViewConstraint.m */; };
 		18DF28A823AFB2EF009DB249 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DF289D23AFB2EF009DB249 /* MASViewAttribute.m */; };
 		18DF28B023AFB914009DB249 /* ASNetworkingTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DF28AF23AFB914009DB249 /* ASNetworkingTools.m */; };
+		56640DC223B0503A0076EB6A /* FaceInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56640DC123B0503A0076EB6A /* FaceInfoView.m */; };
 		65354AE62137E36D0066B14C /* ASFVideoProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 77FE80B820A57D6600CFA9BB /* ASFVideoProcessor.mm */; };
 		6558C841213FA37200BD0265 /* ImageCheckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6558C83F213FA37200BD0265 /* ImageCheckController.m */; };
 		6558C842213FA37200BD0265 /* ImageCheckController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6558C840213FA37200BD0265 /* ImageCheckController.xib */; };
@@ -105,6 +106,9 @@
 		18DF289D23AFB2EF009DB249 /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
 		18DF28AE23AFB914009DB249 /* ASNetworkingTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASNetworkingTools.h; sourceTree = "<group>"; };
 		18DF28AF23AFB914009DB249 /* ASNetworkingTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASNetworkingTools.m; sourceTree = "<group>"; };
+		56640DC023B0503A0076EB6A /* FaceInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FaceInfoView.h; sourceTree = "<group>"; };
+		56640DC123B0503A0076EB6A /* FaceInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FaceInfoView.m; sourceTree = "<group>"; };
+		56640DC323B0519A0076EB6A /* ArcSoftFaceEngineDemo.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArcSoftFaceEngineDemo.pch; sourceTree = "<group>"; };
 		65354AE72137E4930066B14C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6558C83E213FA37200BD0265 /* ImageCheckController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageCheckController.h; sourceTree = "<group>"; };
 		6558C83F213FA37200BD0265 /* ImageCheckController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageCheckController.m; sourceTree = "<group>"; };
@@ -235,9 +239,19 @@
 			path = helper;
 			sourceTree = "<group>";
 		};
+		56640DBF23B050140076EB6A /* views */ = {
+			isa = PBXGroup;
+			children = (
+				56640DC023B0503A0076EB6A /* FaceInfoView.h */,
+				56640DC123B0503A0076EB6A /* FaceInfoView.m */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		6558C82F213F811000BD0265 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				56640DBF23B050140076EB6A /* views */,
 				77FE803220A57ADB00CFA9BB /* ViewController.h */,
 				6558C848213FAC8900BD0265 /* ViewController.mm */,
 				6558C83E213FA37200BD0265 /* ImageCheckController.h */,
@@ -351,6 +365,7 @@
 		77FE802E20A57ADB00CFA9BB /* ArcSoftFaceEngineDemo */ = {
 			isa = PBXGroup;
 			children = (
+				56640DC323B0519A0076EB6A /* ArcSoftFaceEngineDemo.pch */,
 				18DF28AA23AFB824009DB249 /* helper */,
 				18DF286623AFB137009DB249 /* lib */,
 				1899C66923AE62F7002F1A77 /* ArcSoftFaceEngine.framework */,
@@ -469,6 +484,7 @@
 				77FE80C120A57D6700CFA9BB /* ASFRCDManager.m in Sources */,
 				6558C846213FAB4000BD0265 /* VideoCheckController.m in Sources */,
 				77FE80BF20A57D6700CFA9BB /* ASFCameraController.m in Sources */,
+				56640DC223B0503A0076EB6A /* FaceInfoView.m in Sources */,
 				18DF289F23AFB2EF009DB249 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				18DF28B023AFB914009DB249 /* ASNetworkingTools.m in Sources */,
 				18DF286023AFB10F009DB249 /* AFURLResponseSerialization.m in Sources */,
@@ -624,6 +640,7 @@
 					"$(PROJECT_DIR)/ArcSoftFaceEngineDemo",
 				);
 				GCC_INPUT_FILETYPE = automatic;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ArcSoftFaceEngineDemo/ArcSoftFaceEngineDemo.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/ArcSoftFaceEngineDemo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -653,6 +670,7 @@
 					"$(PROJECT_DIR)/ArcSoftFaceEngineDemo",
 				);
 				GCC_INPUT_FILETYPE = automatic;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ArcSoftFaceEngineDemo/ArcSoftFaceEngineDemo.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/ArcSoftFaceEngineDemo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
